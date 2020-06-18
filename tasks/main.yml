@@ -5,6 +5,12 @@
     path: {{ opdk_agent_jmx }}
     state: directory
 
+- name: Copy a file on the remote machine for editing
+  copy:
+    src: {{ opdk_src_agent_prometheus }}
+    dest: /opt/agent/jmx_prometheus_javaagent-0.3.1.jar
+    remote_src: yes
+
 - name: Construct the Target Edge file Folder Path
   set_fact:
     cacheable: yes
