@@ -4,6 +4,7 @@
   file:
     path: {{ opdk_agent_jmx }}
     state: directory
+    mode: '0755'
 
 - name: Copy a file on the remote machine for editing
   become: yes
