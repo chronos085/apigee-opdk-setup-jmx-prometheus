@@ -1,10 +1,10 @@
 ---
-#- name: Create a directory if it does not exist
-#  become: yes
-#  file:
-#    path: {{ opdk_agent_jmx }}
-#    state: directory
-#    mode: '0755'
+- name: Create installer path
+  file:
+    path: "{{ opdk_agent_jmx }}"
+    state: directory
+    owner: "{{ opdk_user_name }}"
+    group: "{{ opdk_group_name }}"
 
 - name: Copy a file on the remote machine for editing
   become: yes
